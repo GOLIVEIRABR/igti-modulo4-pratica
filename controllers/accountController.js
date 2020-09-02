@@ -21,9 +21,12 @@ const create = async (req, res) => {
 
 const findAll = async (req, res) => {
   try {
-    const data = await Account.find();
+    const data = 
+    {msg: 'Estes são os registros',
+      contas: await Account.find()
+    }
 
-    res.send("Estes são os registros"+data);
+    res.send(data);
   } catch (error) {
     res.status(500).send('Erro ao buscar todos os podcasts');
   }
